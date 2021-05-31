@@ -53,6 +53,10 @@ public class SubExample {
 		frame.setTitle("SubFrame");
 		
 		frame.setBounds(100, 100, 450, 300);
+		// frame에 키입력 리스너 붙일 때
+		// 프레임에 버튼이나 텍스트필드 등  다른 객체들이 배치되어 있다면
+		// 프레임에 키입력이 캐치되지 않을 수 있음
+		// 이럴땐 프레임의 포커스를 넣어줘야함
 		frame.setFocusable(true);
 		frame.addKeyListener(new KeyAdapter() {
 			@Override
