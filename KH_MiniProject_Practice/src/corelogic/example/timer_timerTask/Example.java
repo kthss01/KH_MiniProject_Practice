@@ -77,4 +77,59 @@ public class Example {
 		// cancel 메소드를 사용하여 중단 시켜야함!!
  	}
 
+	/*
+	 * Timer, TimerTask 클래스를 정리 
+	 * https://sangwoo0727.github.io/java/JAVA-36_timertask/
+	 * 
+	 * java.util.Timer 클래스
+	 * 
+	 * Timer 클래스는 아래와 같이 3가지의 메소드를 제공한다.
+	 * 	schedule
+	 * 	scheduleAtFixedRate
+	 * 	cancel
+	 * 
+	 * void schedule(TimerTask task, Date time) 
+	 * 	- 설정한 time 시간에, 설정한 task 작업을 수행한다.
+	 * void schedule(TimerTask task, Date firstTime, long period) 
+	 * 	- firstTime 부터 period 간격으로 task 작업을 수행한다.
+	 * 
+	 * 위 두 메소드는 만약 지정한 시간이 현재 시간보다 이전일 경우 바로 task 작업을 수행 
+	 * 
+	 * void schedule(TimerTask task, long delay) 
+	 *  - delay 시간이 지난 후에, task를 수행한다.
+	 * void schedule(TimerTask task, long delay, long period)
+	 *  - delay 시간이 지난 후에, period 간격으로 task를 수행한다.
+	 *  
+	 * 위 두 메소드는 fixed-delay 방식으로 작업을 진행,
+	 * fixed-delay 방식은 선행 작업이 지연될 경우, 
+	 * 다음에 수행되는 작업 역시 그 시간만큼 지연되는 방식 
+	 * 
+	 * void scheduleAtFixedRate(TimerTask task, Date firstTime, long period) 
+	 *  - 지정한 시간부터 일정한 간격으로 task를 수행한다.
+	 * void scheduleAtFixedRate(TimerTask task, long delay, long period)
+	 *  - 일정한 시간(delay)가 지난 후 일정한 간격으로 task를 수행한다.
+	 *  
+	 * 위 두 메소드는 fixed-rate 방식 이용 (선행 작업의 지연 유무에 상관없이 지정된 시간에 작업 실행)
+	 * fixed-delay 방식이 아니므로, 정확하게 일정 시간 간격으로 작업을 실행해야 할 때 적합
+	 * 
+	 * cancel()
+	 * Timer를 중지시키며, 실행 중인 task 작업을 제외한 예정된 작업들은 모두 취소된다.
+	 * 
+	 *************************************************
+	 * 
+	 * java.util.TimerTask 클래스
+	 * 
+	 * TimerTask 클래스는 Timer 클래스가 수행할 작업을 나타냄
+	 * TimerTasks는 Runnable 인터페이스를 구현함
+	 * 
+	 * 	제공하는 메소드
+	 * boolean cancel()
+	 * 	- TimerTask 작업을 취소한다.
+	 * 
+	 * abstract void run()
+	 *  - TimerTask가 실행할 작업
+	 *  
+	 * long scheduledExecutionTime()
+	 *  - 가장 최근에 작업이 실행된 시간을 리턴 
+	 */
 }
