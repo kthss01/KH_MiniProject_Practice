@@ -1,4 +1,4 @@
-package test.objectwriteread;
+package test.object_writeread;
 
 import java.io.Serializable;
 
