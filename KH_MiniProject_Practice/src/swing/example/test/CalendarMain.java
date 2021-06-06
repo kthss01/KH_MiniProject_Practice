@@ -17,7 +17,6 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import javax.swing.JScrollPane;
 
 public class CalendarMain extends JFrame implements ActionListener {
@@ -208,10 +207,8 @@ public class CalendarMain extends JFrame implements ActionListener {
 		int lastDay = date.getActualMaximum(Calendar.DAY_OF_MONTH);
 
 		// 공백출력
-
 		for (int space = 1; space < week; space++) {
 			datePane.add(new JLabel("\t"));
-
 		}
 
 		// 날짜 출력
