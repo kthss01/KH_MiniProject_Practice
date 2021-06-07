@@ -1,7 +1,10 @@
 package test.date_calendar;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -32,6 +35,12 @@ public class Main {
 		// 참고 LocalDate는 Duration 지원 x
 		// 시작일 제외 계산임
 		System.out.println("총 날짜 수 : " + Duration.between(start, today).toDays());
+		
+		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+		System.out.println(sdf1.format(new Date()));
+		
+		System.out.println(today.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+		System.out.println(today.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
 	}
 
 }
